@@ -1,11 +1,11 @@
 const mongoose = require('mongoose');
 const {Schema} = mongoose
 
-const articleSchema = new Schema({
+const article= new Schema({
     titleTask: String,
     taskDetalis: String,
     taskStatus: String,
 },{ timestamps: true });
 
-const dbTask = mongoose.model(mongoose.model('dUser', articleSchema));
+const dbTask = mongoose.model('dbTask', article);
 module.exports = dbTask

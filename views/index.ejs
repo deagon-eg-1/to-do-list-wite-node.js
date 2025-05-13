@@ -49,7 +49,7 @@
                             <h2>my todo</h2>
                          </div>
                        <div class="new-todo">
-                           <button class="new-task" type="submit"><i class="fa-solid fa-circle-plus" aria-label="Add new task to start"></i> new task</button>
+                           <button class="new-task" id="newTaskBtn" type="submit"><i class="fa-solid fa-circle-plus" aria-label="Add new task to start"></i> new task</button>
                            <img src="../public/img/user.png" alt="user">
                        </div>
                     </div>
@@ -99,7 +99,21 @@
                                 </div>
                             </div>
 
-                            <button class="new-task-to-start" aria-label="Add new task to start">
+                            <form action="/add.html" method="POST">
+                                <div class="modal-new-task" id="taskModal">
+                                    <div class="modal-content">
+                                    <span class="close-btn">&times;</span>
+                                    <p>Add New Task</p>
+                                    <input name="titleTask" type="text" id="taskTitle" placeholder="Task Title">
+                                    <textarea name="taskDetalis" id="taskDescription" placeholder="Task Description"></textarea>
+                                    <select name="taskStatus">
+                                        <option value="toStart">to start</option>
+                                    </select>
+                                    <button type="submit" id="saveTask">Save Task</button>
+                                    </div>
+                                </div>
+                            </form>
+                            <button class="new-task" id="newTaskBtn2" aria-label="Add new task to start">
                                <i class="fa-solid fa-circle-plus"></i> new task
                             </button>
                         </div>

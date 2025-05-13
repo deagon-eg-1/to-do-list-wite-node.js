@@ -4,23 +4,23 @@ const port = process.env.PORT || 2003;
 const mongoose = require("mongoose");
 app.set("view engine", "ejs");
 const methodOverride = require("method-override");
-const allRouters = require('./router/allRouters')
+const allRouters = require('./route/allRouters')
 
 // auto reload
-const path = require("path");
-const livereload = require("livereload");
-const liveReloadServer = livereload.createServer();
-liveReloadServer.watch(path.join(__dirname, "public"));
+// const path = require("path");
+// const livereload = require("livereload");
+// const liveReloadServer = livereload.createServer();
+// liveReloadServer.watch(path.join(__dirname, "public"));
 
-const connectLivereload = require("connect-livereload");
-const { isPromise } = require("util/types");
-app.use(connectLivereload());
+// const connectLivereload = require("connect-livereload");
+// const { isPromise } = require("util/types");
+// app.use(connectLivereload());
 
-liveReloadServer.server.once("connection", () => {
-  setTimeout(() => {
-    liveReloadServer.refresh("/");
-  }, 100);
-});
+// liveReloadServer.server.once("connection", () => {
+//   setTimeout(() => {
+//     liveReloadServer.refresh("/");
+//   }, 100); 
+// });
 
 // middleware
 app.use(express.json());
@@ -28,6 +28,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
 app.set("view engine", "ejs");
 app.use(methodOverride("_method"));
+// app.use(express.static(path.join(__dirname, 'public')));
+
 
 // contact to darabase
 mongoose

@@ -303,7 +303,7 @@
    border-color: var(--mian-color-one);
    cursor: pointer;
 }
-.container .content .tasks .new-task-to-start{
+.container .content .tasks .new-task{
    padding: 10px;
    background-color: transparent;
    color: var(--mian-color-one);
@@ -311,7 +311,7 @@
    border-radius: 5px;
    width: 100%;
 }
-.container .content .tasks .new-task-to-start i{
+.container .content .tasks .new-task i{
    margin-right: 5px;
 }
 
@@ -323,4 +323,58 @@
     .container .content .tasks {
         grid-template-columns: 1fr;
     }
+}
+
+
+.modal-new-task {
+   display: none; /* مخفي بشكل افتراضي */
+   width: 100%;
+   margin-bottom: 20px;
+   z-index: 100;
+ }
+ 
+ .modal-content {
+   background-color: var(--mian-color-two);
+   padding: 20px;
+   border-radius: 10px;
+   width: 100%;
+   border: 2px solid var(--second-color-one);
+ }
+ .modal-content p{
+   margin-bottom: 10px;
+ }
+ 
+ .modal-content input,
+ .modal-content textarea {
+   display: block;
+   width: 100%;
+   margin-bottom: 15px;
+   padding: 8px;
+   border: 1px solid var(--second-color-one);
+   border-radius: 5px;
+   resize: none;
+ }
+ .modal-content textarea {
+   height: 100px;
+ }
+ 
+ .close-btn {
+   float: right;
+   cursor: pointer;
+   font-size: 20px;
+   color: var(--second-color-five);
+ }
+ .modal-content button{
+   padding: 5px 15px;
+   background-color: transparent;
+   border: 1px solid var(--second-color-one);
+   border-radius: 5px;
+   color: var(--second-color-one);
+   transition: .4s linear;
+   width: 100%;
+}
+.modal-content button:hover{
+   background-color: var(--mian-color-one);
+   border-color: var(--mian-color-one);
+   cursor: pointer;
 }
