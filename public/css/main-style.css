@@ -4,6 +4,7 @@
    padding: 0;
    box-sizing: border-box;
    text-transform: capitalize;
+   font-family: "Noto Sans Display", sans-serif;
 }
 /* root style in website */
 :root{
@@ -11,7 +12,7 @@
    --mian-color-two: #fff;
    --mian-color-three: #000;
    --second-color-one: #C4D0EB;
-   --second-color-two: #F2F6FF;
+   --second-color-two: #e8edfd;
    --second-color-three: #334977;
    --second-color-four: #535353;
    --second-color-five: #9D9D9F;
@@ -22,24 +23,35 @@
 /* styling container */
 .container{
    display: grid;
-   grid-template-columns: 200px 5fr;
+   grid-template-columns: 250px 5fr;
    grid-template-rows: 1fr;
    grid-gap: 0;
    width: 100%;
-   height: 100vh;
+   min-height: 100vh;
+   max-height: 100%;
    background-color: var(--mian-color-one);
    padding: 10px 10px 0 10px;
-   overflow: hidden;
+   /* overflow: hidden; */
 }
 /* styling nav bar */
 .container nav{
+   /* display: grid;
+   grid-template-rows: auto 1fr;
+   padding: 15px; */
+   position: relative;
+}
+.container nav > div{
    display: grid;
    grid-template-rows: auto 1fr;
    padding: 15px;
+   position: fixed;
+   width: 250px;
 }
 .container nav .logo h1 {
    color: var(--mian-color-two);
-   margin-bottom: 30px;
+   margin-bottom: 20px;
+   padding-bottom: 10px;
+   border-bottom: 1px solid var(--second-color-one);
 }
 .container nav .pages ul {
    list-style: none;
@@ -61,28 +73,34 @@
    border-radius: 15px 15px 0 0;
    background-color: var(--mian-color-two);
    padding: 30px;
+   padding-bottom: 0;
    padding-top: 10px;
-   height: 100%;
+   /* height: 100%; */
 }
 /* styling header */
 .container header {
-    height: 50px;
+    /* height: 50px; */
     display: flex;
     align-items: center;
     padding: 0 15px;
     gap: 10px;
     border-bottom: 1px solid var(--second-color-five);
-}
+    color: var(--second-color-five);
+   }
 .container header .active{
-    background-color: var(--second-color-two);
-    padding: 5px;
-    border-radius: 5px;
+   background-color: var(--second-color-two);
+   padding: 5px;
+   border-radius: 5px;
+   color: var(--mian-color-three);
 }
 /* styling content */
 .container .content{
    background-color: var(--mian-color-two);
-   height: calc(100% - 157px);
+   /* height: calc(100% - 157px); */
    margin-top: 20px;
+   display: grid;
+   grid-template-rows: 100px 1fr;
+   
 }
 .container .content .head-content{
    align-items: center;
@@ -120,20 +138,47 @@
    margin-top: 10px;
 }
 .container .content .head-content .from-to-and-search input{
-   padding: 5px;
-   border: 1px solid var(--second-color-one);
+   padding: 6px;
+   border: 2px solid var(--second-color-one);
    border-radius: 5px;
    background-color: var(--mian-color-two);
 }
 .container .content .head-content .from-to-and-search .search{
    position: relative;
+   display: flex;
+}
+.container .content .head-content .from-to-and-search .search button{
+   padding: 5px 15px;
+   border: 2px solid var(--second-color-one);
+   border-radius: 5px;
+   background-color: var(--mian-color-two);
+   margin-left: 10px;
+   
+}
+.container .content .head-content .from-to-and-search .search button{
+   padding: 5px 15px;
+   border: 2px solid var(--second-color-one);
+   border-radius: 5px;
+   background-color: var(--mian-color-two);
+   margin-left: 10px;
+   transition: .4s;
+   cursor: pointer;
+}
+.container .content .head-content .from-to-and-search .search button:hover{
+   background-color: var(--mian-color-one);
+   border-color: var(--mian-color-one);
 }
 .container .content .head-content .from-to-and-search .search i{
-   position: absolute;
-   top: 50%;
-   right: 0;
-   transform: translate(-50%,-50%);
    color: var(--second-color-one);
+}
+.container .content .head-content .from-to-and-search .search select{
+   padding: 5px;
+   border: 2px solid var(--second-color-one);
+   border-radius: 5px;
+   background-color: var(--mian-color-two);
+   color: var(--second-color-five);
+   margin-left: 10px;
+   width: 150px;
 }
 .container .content .head-content .from-to-and-search .from-to{
    display: flex;
@@ -146,13 +191,11 @@
    gap: 15px;
    width: 100%;
    margin-top: 30px;
-   height: 100%;
+   /* height: 100%; */
    /* padding: 0 20px; */
+   overflow: hidden;
 }
-.container .content .tasks > div{
-   /* width: calc(100% / 3); */
-   
-}
+
 .container .content .tasks .caption-in-progress,
 .container .content .tasks .caption-completed,
 .container .content .tasks .caption-to-start{
@@ -187,7 +230,7 @@
    padding: 20px;
    border-radius: 10px 10px 0 0;
    height: 100%;
-   /* width: 100%; */
+   overflow: auto;
 }
 .container .content .tasks .task{
    height: fit-content;
@@ -243,12 +286,28 @@
 .container .content .tasks .task .date{
    font-size: 13px;
    color: var(--second-color-five);
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+}
+.container .content .tasks .task .date button{
+   padding: 5px 15px;
+   background-color: transparent;
+   border: 1px solid var(--second-color-one);
+   border-radius: 5px;
+   color: var(--second-color-one);
+   transition: .4s linear;
+}
+.container .content .tasks .task .date button:hover{
+   background-color: var(--mian-color-one);
+   border-color: var(--mian-color-one);
+   cursor: pointer;
 }
 .container .content .tasks .new-task-to-start{
    padding: 10px;
    background-color: transparent;
    color: var(--mian-color-one);
-   border: 1px solid var(--second-color-one);
+   border: 2px dashed var(--second-color-one);
    border-radius: 5px;
    width: 100%;
 }

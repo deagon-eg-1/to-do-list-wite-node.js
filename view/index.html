@@ -7,22 +7,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link rel="stylesheet" href="../public/css/main-style.css">
     <link rel="shortcut icon" href="../public/img/mohamed.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Noto+Sans+Display:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- start container -->
     <div class="container">
         <!-- start navbar -->
         <nav>
-            <div class="logo">
-                <h1>ToDo</h1>
-            </div>
-            <div class="pages">
-                <ul>
-                    <li class="actiev">
-                        <i class="fa-solid fa-chart-line"></i>
-                        <p>dashboard</p>
-                    </li>
-                </ul>
+            <div>
+                <div class="logo">
+                    <h1>ToDo</h1>
+                </div>
+                <div class="pages">
+                    <ul>
+                        <li class="actiev">
+                            <i class="fa-solid fa-chart-line"></i>
+                            <p>dashboard</p>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </nav>
         <!-- end navbar -->
@@ -50,7 +55,14 @@
                     </div>
                     <div class="from-to-and-search">
                        <div class="search">
-                          <input type="search" name="search" placeholder="Search"/><i class="fa-solid fa-magnifying-glass"></i>
+                        <input type="search" name="search" placeholder="Search"/>
+                        <select name="search-in-todo">
+                            <option selected>To Choose</option>
+                            <option name="to-start" value="to-start">to Start</option>
+                            <option name="in-progress" value="in-progress">in Progress</option>
+                            <option name="completed" value="completed">completed</option>
+                        </select>
+                        <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
                        </div>
                        <div class="from-to">
                           <input type="date" name="from" placeholder="from"/>
@@ -83,29 +95,10 @@
                                 </div>
                                 <div class="date">
                                    <p>date</p>
+                                   <button type="submit">in progress</button>
                                 </div>
                             </div>
-                            
-                            <div class="task">
-                                <div class="title-task">
-                                    <p>title task</p>
-                                    <div class="task-opction">
-                                        <i class="fa-solid fa-ellipsis-vertical"></i>
-                                        <div class="task-dropDown">
-                                           <p>delete</p>
-                                           <p>edit</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="content-task">
-                                    <p>
-                                        llllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllll
-                                    </p>
-                                </div>
-                                <div class="date">
-                                   <p>date</p>
-                                </div>
-                            </div>
+
                             <button class="new-task-to-start" aria-label="Add new task to start">
                                <i class="fa-solid fa-circle-plus"></i> new task
                             </button>
@@ -135,27 +128,7 @@
                                 </div>
                                 <div class="date">
                                    <p>date</p>
-                                </div>
-                            </div>
-                            
-                            <div class="task">
-                                <div class="title-task">
-                                    <p>title task</p>
-                                    <div class="task-opction">
-                                        <i class="fa-solid fa-ellipsis-vertical"></i>
-                                        <div class="task-dropDown">
-                                           <p>delete</p>
-                                           <p>edit</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="content-task">
-                                    <p>
-                                        llllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllll
-                                    </p>
-                                </div>
-                                <div class="date">
-                                   <p>date</p>
+                                   <button type="submit">completed</button>
                                 </div>
                             </div>
                             
